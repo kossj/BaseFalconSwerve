@@ -30,8 +30,15 @@ public class RobotContainer {
     private final JoystickButton zeroGyro = new JoystickButton(driver, PS4Controller.Button.kShare.value);
     private final JoystickButton robotCentric = new JoystickButton(driver, PS4Controller.Button.kR2.value);
 
+    private final JoystickButton gearRunnerJointUp = new JoystickButton(driver, PS4Controller.Button.kR1.value);
+    private final JoystickButton gearRunnerJointDown = new JoystickButton(driver, PS4Controller.Button.kR2.value);
+
+    private final JoystickButton gearRunnerIntakeIn = new JoystickButton(driver, PS4Controller.Button.kL1.value);
+    private final JoystickButton gearRunnerIntakeOut = new JoystickButton(driver, PS4Controller.Button.kL2.value);
+
     /* Subsystems */
     private final Swerve s_Swerve = new Swerve();
+    private final GearRunner s_GearRunner = new GearRunner();
 
 
     /** The container for the robot. Contains subsystems, OI devices, and commands. */
@@ -59,6 +66,15 @@ public class RobotContainer {
     private void configureButtonBindings() {
         /* Driver Buttons */
         zeroGyro.onTrue(new InstantCommand(() -> s_Swerve.zeroGyro()));
+
+        gearRunnerJointUp.onTrue(new InstantCommand(() -> s_GearRunner.jointUp()));
+        gearRunnerJointDown.onTrue(new InstantCommand(() -> s_GearRunner.jointDown()));
+
+        gearRunnerIntakeIn.whileTrue(new InstantCommand(() -> s_GearRunner.intakeIn()));
+        gearRunnerIntakeIn.onFalse(new InstantCommand(() -> s_GearRunner.intakeStop()));
+
+        gearRunnerIntakeOut.whileTrue(new InstantCommand(() -> s_GearRunner.intakeOut()));
+        gearRunnerIntakeOut.onFalse(new InstantCommand(() -> s_GearRunner.intakeStop()));
     }
 
     /**

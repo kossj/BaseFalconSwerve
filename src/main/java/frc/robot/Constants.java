@@ -145,4 +145,17 @@ public final class Constants {
             new TrapezoidProfile.Constraints(
                 kMaxAngularSpeedRadiansPerSecond, kMaxAngularSpeedRadiansPerSecondSquared);
     }
+
+    public static final class GearRunnerConstants {
+        // TODO: Figure out good numbers.
+        public static final int jointID = 1;
+        public static final int intakeID = 2;
+
+        public static final double jointUpPos = 90;
+        public static final double jointDownPos = 0;
+
+        public static final double intakeInVelocity = 100;
+        public static final double intakeOutVelocity = -100;
+
+    }
 }
