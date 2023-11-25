@@ -1,3 +1,7 @@
+**Swerve Template comes from Team 364, Fusion Corp. Original README follows.**
+
+https://github.com/Team364/BaseFalconSwerve
+
 **Note: In 2023, there was an [issue](https://github.com/Team364/BaseFalconSwerve/issues/8) that prevented this code from working with MK4i's (or any module that used inverted motors). A [fix](https://github.com/Team364/BaseFalconSwerve/issues/8#issuecomment-1384799539) has been found, tested on a real robot, and this issue is believed to have been fixed as of 1/17. If anyone experiences any further issues, please report them. Thanks**
 
 # BaseFalconSwerve </br>
